@@ -1,0 +1,3 @@
+@{
+    SoftwareInventory = "<Query>" 
+}
