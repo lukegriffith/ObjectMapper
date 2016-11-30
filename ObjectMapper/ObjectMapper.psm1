@@ -10,10 +10,5 @@ function Invoke-Query {
         [String]$Query
 
     )
-
-
-    
-
-    ($type)::new($Query)
-    
+    ($type)::new($Query)    
 }
