@@ -1,16 +1,17 @@
 using Module ..\BaseConnector.ps1
 
 class InventoryItem : BaseConnector {
-    [String]$CategoryID
-    [String]$Name
+    [String]$CatalogID
+    [String]$ProductName
+    [Double]$Price
 
-    InventoryItem([String]$Query) : base($Query) { }
+    InventoryItem([PSCustomObject]$Object) : base($Object) { }
     
 }
 
 <#
     .Description
-    Cmdlet queries information from an external system, with a proprietary query language
+    Cmdlet queries InventoryItems from a 3rd party system. 
 
 #>
 function Get-InventoryItem {
@@ -18,6 +19,6 @@ function Get-InventoryItem {
         $Name
     )
 
-    Invoke-Query -Type ([InventoryItem]) -Query "Select CategoryID, Name from blah where Name = $Name"
+    Invoke-Query -Type ([InventoryItem]) -Query "Select CategoryID, ProductName, Price from InventoryTable where Name = $Name"
     
 }

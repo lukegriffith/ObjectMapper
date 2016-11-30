@@ -4,11 +4,23 @@ function center ($x, $color = "White"){ $a = " ".padleft(([Console]::WindowWidth
 
 bar * Green
 bar * Green
-center "Lukes Build System.`n`n"
-center $pwd
+center "www.lukegriffith.co.uk"
+bar - Green
+center "Build System.`n"
+center "Project: $pwd"
 
 
 switch ($args) {
 
-    {$_ -eq "Test"}  { pushd; center "Starting Tests`n`n" Blue; Import-Module $psscriptroot\DynamicFunctions -force; Invoke-Pester <#-CodeCoverage (Get-ChildItem -Path .\DynamicFunctions -Recurse | ? {$_.Extension -in @(".psm1",".ps1")}).FullName#>; popd }
+    {$_ -eq "Test"}  { 
+        pushd; 
+        center "Starting Tests`n`n" Red; 
+        Import-Module $psscriptroot\ObjectMapper -force; 
+        Invoke-Pester <#-CodeCoverage (Get-ChildItem -Path $PSScriptRoot\ObjectMapper -Recurse | ? {$_.Extension -in @(".psm1",".ps1")}).FullName#>; 
+        popd 
+    }
 }
+
+bar - Green
+bar - Green
+center "Build System Shutting Down." Red 

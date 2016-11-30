@@ -10,5 +10,14 @@ function Invoke-Query {
         [String]$Query
 
     )
-    ($type)::new($Query)    
+
+    # Mock output from 3rd party system
+    $mockedOutput = [PSCustomOBject]@{
+        CatalogID = 1
+        ProductName = "A Coat"
+        Price = 101.99
+
+    }
+
+    ($type)::new($mockedOutput)    
 }

@@ -1,17 +1,15 @@
 class BaseConnector {
 
-    [String]$Query
+    [String]$BaseID
 
-    BaseConnector([String]$Query) {
+    BaseConnector([PSCustomObject]$Object) {
 
         $this.psobject.properties.name | ForEach-Object {
-            # Could iterate through class property names, and assign
-            # from query result
-            
+            # Mapping object to class properties.
+            $this.$_ = $Object.$_
         }
-        
-        $this.Query = $Query
 
+        $this.BaseID = [guid]::newguid()
         
     }
  }
