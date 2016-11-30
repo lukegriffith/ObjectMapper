@@ -17,7 +17,7 @@ PS C:\Users\lukem\Documents\GitHub\DynamicFunctions> .\Build.ps1 test
 ------------------------------------------------------------------------------------------------------------------------
                                                     Build System.
 
-                              Project: C:\Users\lukem\Documents\GitHub\DynamicFunctions
+                              Project: C:\Users\lukem\Documents\GitHub\ObjectMapper
                                                    Starting Tests
 
 
