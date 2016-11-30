@@ -1,34 +1,25 @@
-<#
+using Module .\BaseConnector.ps1
 
-    Dynamic function creation, from txt file defining splunk queries. 
+class TypeFactory { 
 
-    @{
-    	SoftwareInventory = "splunkQuery"
-    }
-
-    This would create a function called Get-SoftwareInventory
-
-    This could be extended to verbs, with nested dictionaries 
-
-    @{
-        Get = @{
-            "SoftwareInventory" = "Query"
-        }
-
-        Set = @{
-            "SoftwareInventory" = @("Arguments","ScriptBlock")
-        }
-    }
-
-#>
-
-class functionGenerator {
-
-
-    [void]LoadFunctionDefinition($Configuration){
-
-
-    }
+    [string[]]$types
 
 }
 
+$factory = [TypeFactory]::new()
+
+Get-ChildItem $PSScriptRoot\functions | ForEach-Object {
+    $factory.types += $_.Name
+    . $_.FullName
+}
+
+function Invoke-Query {
+    Param(
+        $type,
+        [String]$Query
+
+    )
+
+    ($type)::new($Query)
+    
+}

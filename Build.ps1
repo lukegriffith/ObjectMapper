@@ -10,5 +10,5 @@ center $pwd
 
 switch ($args) {
 
-    {$_ -eq "Test"}  { pushd; center "Starting Tests`n`n" Blue; Import-Module $psscriptroot\DynamicFunctions -force; Invoke-Pester -CodeCoverage (Get-ChildItem -Path .\DynamicFunctions -Recurse | ? {$_.Extension -in @(".psm1",".ps1")}).FullName; popd }
+    {$_ -eq "Test"}  { pushd; center "Starting Tests`n`n" Blue; Import-Module $psscriptroot\DynamicFunctions -force; Invoke-Pester <#-CodeCoverage (Get-ChildItem -Path .\DynamicFunctions -Recurse | ? {$_.Extension -in @(".psm1",".ps1")}).FullName#>; popd }
 }
