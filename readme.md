@@ -6,7 +6,7 @@ Using a REST interface to obtain the data, and mapped the json output to a Power
 ## Class backed cmdlets
 ### InventoryItem.ps1
 
-The powershell function returns the class defined that is defined along side the function.
+The powershell function returns the class that is defined along side the function.
 
 The Invoke-Query function, not in this abstract scenario would go off to a 3rd party system, with the Query provided and return a workable object (xml, json, etc) that can be consumed by the class constructor.
 
@@ -24,7 +24,7 @@ PS C:\Users\lukem\Documents\GitHub\DynamicFunctions> .\Build.ps1 test
 ------------------------------------------------------------------------------------------------------------------------
                                                     Build System.
 
-                              Project: C:\Users\lukem\Documents\GitHub\DynamicFunctions
+                              Project: C:\Users\lukem\Documents\GitHub\ObjectMapper
                                                    Starting Tests
 
 
@@ -59,6 +59,3 @@ ObjectMapper.psm1             3 . $_.FullName
 ------------------------------------------------------------------------------------------------------------------------
                                               Build System Shutting Down.
 ```
-
-# Notes
-
