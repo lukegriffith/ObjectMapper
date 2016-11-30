@@ -1,12 +1,12 @@
 # ObjectMapper
 
-Mapper was used to solve a problem of returning a Typed object, from a 3rd party system.
-We used REST to obtain the data, and mapped the json output to a PowerShell type using as much generic code as possible.
+Mapper was used to solve a problem of returning a typed object, from a 3rd party system.
+Using a REST interface to obtain the data, and mapped the json output to a PowerShell type using as much generic code as possible.
 
 ## Class backed cmdlets
 ### InventoryItem.ps1
 
-This is a class backed cmdlet, the cmdlet inherits from BaseConnector, that has the logic to regenerate 
+The powershell function returns the class defined that is defined along the function.
 
 
 ```
