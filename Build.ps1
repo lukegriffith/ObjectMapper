@@ -15,8 +15,8 @@ switch ($args) {
     {$_ -eq "Test"}  { 
         pushd; 
         center "Starting Tests`n`n" Red; 
-        Import-Module $psscriptroot\ObjectMapper -force; 
-        Invoke-Pester <#-CodeCoverage (Get-ChildItem -Path $PSScriptRoot\ObjectMapper -Recurse | ? {$_.Extension -in @(".psm1",".ps1")}).FullName#>; 
+        #Import-Module $psscriptroot\ObjectMapper -force; 
+        Invoke-Pester -CodeCoverage (Get-ChildItem -Path $PSScriptRoot\ObjectMapper -Recurse | ? {$_.Extension -in @(".psm1",".ps1")}).FullName; 
         popd 
     }
 }
