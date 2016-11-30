@@ -3,7 +3,9 @@
     "command": "PowerShell.exe",
     "isShellCommand": true,
     "args": [
-        
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Unrestricted",
         ".\\Build.ps1"
     ],
     "tasks": [
